@@ -11,10 +11,7 @@ const app =express();
 
 config({
     path:"./config.env"
-})
-
-
-
+});
 connectDB();
 
 //middleware
@@ -29,22 +26,15 @@ app.use(cors({
 app.use("/api/v1/users",userRouter);
 app.use("/api/v1/service",serviceRouter);
 
-
-
 const router=express.Router();
-
-
 app.get("/",(req,res)=>{
     res.send("hello baby");
 })
-
-
 
 const port =process.env.PORT;
  app .listen(port,()=>{
     console.log(`server is working at ${port} in ${process.env.NODE_ENV} Mode`);
 });
-
 app.use((err,req,res,next)=>{
     return res.status(404).json({
         success:false,

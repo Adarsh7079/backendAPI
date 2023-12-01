@@ -17,4 +17,4 @@ export const sendCookie=(user , res, message , statucode=200)=>{
        message
     });
    
-};
+}; 
